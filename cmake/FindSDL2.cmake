@@ -1,0 +1,21 @@
+unset(SDL2_INCLUDE_DIR CACHE)
+
+
+find_path(SDL2_INCLUDE_DIRS
+    NAMES SDL.h 
+    HINTS 
+    $ENV{CMAKE_LIBS}/* 
+    $ENV{SDL2_INCLUDE_DIRS}
+
+    PATH_SUFFIXES include
+) 
+
+find_library(SDL2_LIBRARIES 
+    NAMES SDL2 SDL2main SDL2test
+    HINTS 
+    $ENV{CMAKE_LIBS}/*
+    $ENV{SDL2_LIBRARIES}
+)
+
+message("SDL2_INCLUDE_DIR: ${SDL2_INCLUDE_DIRS}")
+message("SDL2_LIBRARIES: ${SDL2_LIBRARIES}")

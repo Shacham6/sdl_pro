@@ -107,7 +107,7 @@ void PollForEvents(ApplicationContext &context) {
       if (e.type == SDL_QUIT) {
         quit = true;
         Print("Quitting application..");
-      }
+      } 
     }
   }
 }
